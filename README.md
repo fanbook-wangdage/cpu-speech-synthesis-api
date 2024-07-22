@@ -1,6 +1,7 @@
 https://github.com/zixiiu/Digital_Life_Server  
 
-这个项目里面的语音合成，我单独做成api了
+这个项目里面的语音合成，我单独做成api了  
+适用于短文本，长了容易阴阳怪气（我也不知道为啥）  
 
 # 运行项目：
 
