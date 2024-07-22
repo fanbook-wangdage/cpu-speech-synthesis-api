@@ -55,6 +55,8 @@ cp monotonic_align/*.pyd .
 
 ## 5.使用api  
 
+**注意：你需要更改api.py里面的内容，需要改的地方我已经注释了**  
+
 > /getaudio
 
 api在普通电脑上5秒内响应，2h2g轻量服务器上10秒内响应  
