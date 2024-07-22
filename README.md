@@ -81,7 +81,7 @@ https://127.0.0.1:5001/getaudio?text=%E4%BD%A0%E5%A5%BD%E5%95%8A
 | 参数名 | 类型 | 是否必须 | 描述 |
 | :----: | :----: | :----: | :----: |
 | text | string | 是 | 文本 |
-| name | string | 否 | 模型编号，1至9 |
+| name | string | 否 | 模型编号，0至9 |
 
 返回：  
 type:json  
