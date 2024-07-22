@@ -51,7 +51,7 @@ python setup.py build_ext --inplace
 cp monotonic_align/*.pyd .
 ```
 
-如果output.wav里面是杂音，卸载python并重新按照1、2来安装库  
+如果output.wav里面是杂音，重装python3.9.8并重新按照1、2来安装库  
 
 ## 5.使用api  
 
