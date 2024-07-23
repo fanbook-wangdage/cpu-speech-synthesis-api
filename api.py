@@ -32,28 +32,22 @@ def getaudio():
     
     """
     m=[
-        ("models/paimon6k.json", "models/paimon6k_390k.pth"),
-        ("models/CyberYunfei3k.json", "models/yunfei3k_69k.pth"),
-        ("models/ayaka.json", "models/ayaka_167k.pth"),
-        ("models/ningguang.json", "models/ningguang_179k.pth"),
-        ("models/nahida.json", "models/nahida_129k.pth"),
-        ("models/noelle.json", "models/noelle_337k.pth"),
-        ("models/yunfeimix.json", "models/yunfeimix_122k.pth"),
-        ("models/yunfeineo.json", "models/yunfeineo_25k.pth"),
-        ("models/zhongli.json", "models/zhongli_44k.pth"),
-        ("models/catmix.json" , "models/catmix_107k.pth"),
+      ['models/paimon6k.json', 'models/paimon6k_390k.pth', 'character_paimon', 1],
+      ['models/yunfeimix2.json', 'models/yunfeimix2_53k.pth', 'character_yunfei', 1.1],
+      ['models/catmix.json', 'models/catmix_107k.pth', 'character_catmaid', 1.2]
     ]
     
     text = request.args.get('text')
     name = request.args.get('name')
-    
+    s = request.args.get('s')
     if name==None:name=0
-    if int(name)>9 or int(name)<0:return {"ok":False,"code":201,"msg":"模型编号错误，name参数应该填0到9的数字"}
+            
+    if int(name)>9 or int(name)<0:return {"ok":False,"code":201,"msg":"模型编号错误，name参数应该填0到3的数字"}
     if text==None:return {"ok":False,"code":202,"msg":"请填写text(文本)参数，该值不能为空"}
     
     t=time.time()
     p=f"C:\\inetpub\\wwwroot\\{t}.wav"#改为你的域名/ip对应的物理地址(网站目录)
-    ga.generateAudio(text, p, m[int(name)])
+    ga.generateAudio(text,p,m=m[int(name)])
     
     return {"ok":True,"url":your_url+'/'+str(t)+'.wav',"msg":""}
     
