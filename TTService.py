@@ -47,7 +47,7 @@ class TTService():
         with torch.no_grad():
             x_tst = stn_tst.cpu().unsqueeze(0)
             x_tst_lengths = torch.LongTensor([stn_tst.size(0)]).cpu()
-            audio = self.net_g.infer(x_tst, x_tst_lengths, noise_scale=1.667, noise_scale_w=0.2, length_scale=self.speed)[0][
+            audio = self.net_g.infer(x_tst, x_tst_lengths, noise_scale=.667, noise_scale_w=0.2, length_scale=self.speed)[0][
                 0, 0].data.cpu().float().numpy()
         return audio
 
@@ -60,3 +60,22 @@ class TTService():
 
 
 
+# # Paths to the configuration and model files
+# cfg_path = "models/catmix.json"
+# model_path ="models/catmix_107k.pth"
+# char = 'character_name'  # e.g., 'en'
+# speed = 1.0  # speed of speech, 1.0 means normal speed
+
+# # Initialize the TTService object
+# tts_service = TTService(*['models/catmix.json', 'models/catmix_107k.pth', 'character_catmaid', 1.2])
+
+# # Text to be synthesized
+# text = "喵~主人，你回来啦！有想我了吗？"
+
+# # Call the read function
+# audio_output = tts_service.read(text)
+
+# # Save the output to a file
+# output_filename = 'output.wav'
+# sample_rate = 48000  # Sample rate, e.g., 22050 Hz
+# tts_service.read_save(text, output_filename, sample_rate)
