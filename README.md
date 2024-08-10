@@ -66,17 +66,15 @@ api在普通电脑上5秒内响应，2h2g轻量服务器上10秒内响应
 模型编号有这些：  
 
 ```
-0:("models/paimon6k.json", "models/paimon6k_390k.pth"),
-1:("models/CyberYunfei3k.json", "models/yunfei3k_69k.pth")
-2:("models/ayaka.json", "models/ayaka_167k.pth")
-3:("models/ningguang.json", "models/ningguang_179k.pth")
-4:("models/nahida.json", "models/nahida_129k.pth")
-5:("models/noelle.json", "models/noelle_337k.pth")
-6:("models/yunfeimix.json", "models/yunfeimix_122k.pth")
-7:("models/yunfeineo.json", "models/yunfeineo_25k.pth")
-8:("models/zhongli.json", "models/zhongli_44k.pth")
-9:("models/catmix.json" , "models/catmix_107k.pth")
+['models/paimon6k.json', 'models/paimon6k_390k.pth', 'character_paimon', 1],
+['models/yunfeimix2.json', 'models/yunfeimix2_53k.pth', 'character_yunfei', 1.1],
+['models/catmix.json', 'models/catmix_107k.pth', 'character_catmaid', 1.2]
 ```  
+需要添加请按照该格式添加在代码的模型列表中：  
+```
+[模型配置,模型文件,自定义模型名,语速]
+```
+
 
 示例：  
 https://127.0.0.1:5001/getaudio?text=%E4%BD%A0%E5%A5%BD%E5%95%8A
